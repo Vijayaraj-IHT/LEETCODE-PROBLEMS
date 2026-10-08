@@ -13,15 +13,15 @@ My hand-curated DSA practice — one folder per problem with a working solution 
 
 <br/>
 
-![Easy](https://img.shields.io/badge/Easy-31-brightgreen?style=for-the-badge)
+![Easy](https://img.shields.io/badge/Easy-29-brightgreen?style=for-the-badge)
 ![Medium](https://img.shields.io/badge/Medium-15-orange?style=for-the-badge)
-![Hard](https://img.shields.io/badge/Hard-6-red?style=for-the-badge)
-![Total](https://img.shields.io/badge/Repo-52%20structured-2EA8E0?style=for-the-badge)
+![Hard](https://img.shields.io/badge/Hard-5-red?style=for-the-badge)
+![Total](https://img.shields.io/badge/Repo-49%20structured-2EA8E0?style=for-the-badge)
 ![LeetCode Solved](https://img.shields.io/badge/LeetCode-58%20solved%20(33E%2F19M%2F6H)-FFA116?style=for-the-badge)
 
 </div>
 
-> **Profile vs Repo:** [LeetCode @vijay-3102](https://leetcode.com/u/vijay-3102/) shows **58 solved** (33 Easy · 19 Medium · 6 Hard, 98 submissions, 63.27% acceptance). This repo now holds **52 fully structured** solutions — the previous **37 curated folders + 12 loose `*.py` files** have been migrated to `NN-slug/` (see `38–49`), plus 3 recent ACs inferred from your profile (`50–52`). **6 LeetCode submissions** are still pending export (requires authenticated LeetCode API) — see [ANALYSIS.md](ANALYSIS.md) for details and a sync script.
+> **Profile vs Repo:** [LeetCode @vijay-3102](https://leetcode.com/u/vijay-3102/) shows **58 solved** (33 Easy · 19 Medium · 6 Hard, 98 submissions, 63.27% acceptance). This repo now holds **49 fully structured** solutions — the previous **37 curated folders + 12 loose `*.py` files** have been migrated to `NN-slug/` (`38–49`). **9 LeetCode submissions** remain to be added manually — just create the next `NN-slug/` folder with `solution.py` + `README.md` (see template below). Full audit in [ANALYSIS.md](ANALYSIS.md).
 
 ---
 
@@ -42,7 +42,15 @@ python3 01-two-sum/solution.py
 python3 38-binary-tree-inorder-traversal/solution.py
 ```
 
-## 📊 What's inside (52)
+**To add the next problem manually (your preference):**
+
+```bash
+mkdir -p 50-implement-stack-using-queues
+# paste your LeetCode code into solution.py
+# copy any existing README.md as template, update title / LeetCode # / difficulty
+```
+
+## 📊 What's inside (49)
 
 | # | LeetCode | Title | Difficulty | Lang |
 |---|----------|-------|------------|------|
@@ -95,11 +103,8 @@ python3 38-binary-tree-inorder-traversal/solution.py
 | **47** | 862 | Shortest Subarray with Sum at Least K | Hard | Python |
 | **48** | 933 | Number of Recent Calls | Easy | Python |
 | **49** | 1700 | Number of Students Unable to Eat Lunch | Easy | Python |
-| **50** | 225 | Implement Stack using Queues | Easy | Python |
-| **51** | 83 | Remove Duplicates from Sorted List | Easy | Python |
-| **52** | 32 | Longest Valid Parentheses | Hard | Python |
 
-*Bold 38–49 migrated from former loose files (`144.py`, `145.py`, `94.py`, `232.py`, `239.py`, `387.py`, `589.py`, `590.py`, `622.py`, `862.py`, `933.py`, `1700.py`). 50–52 inferred from recent AC list on your profile.*
+*Bold 38–49 migrated from former loose files (`144.py`, `145.py`, `94.py`, `232.py`, `239.py`, `387.py`, `589.py`, `590.py`, `622.py`, `862.py`, `933.py`, `1700.py`). Next slots `50+` are ready for your manual uploads.*
 
 ---
 
@@ -129,7 +134,6 @@ python3 38-binary-tree-inorder-traversal/solution.py
 - **Pattern reuse:** sliding window + hashmap (#3, #30, #43), two pointers (#11, #15–16, #18), Boyer-Moore voting (#29), monotonic deque (#42/#47), counter shortcut (#49), iterative tree stacks (#38–40, #44–45) — not recursion — to avoid depth limits.
 - **Pragmatic over optimal at times:** e.g., `01-two-sum` is O(n²) `in` + `index` brute-force (not hashmap O(n)), `04-median` merges & sorts O((m+n) log(m+n)) instead of binary-search O(log min). Works, but flagged for upgrade.
 - **Strengths:** bit hacks (`n ^ (n>>1)` + `x & (x+1)` for alternating bits), prefix-monotonic queue for #862, BFS queue for #21 Generate Parentheses, clean circular buffer (#46).
-- **Gaps to close:** 6 of your 58 LeetCode solves aren't yet in the repo (auth-walled export); a sync helper is provided in ANALYSIS.md. Also consider upgrading #1 and #4 to optimal for interviews.
 
 ## 🚀 Run
 
@@ -140,19 +144,6 @@ python3 38-binary-tree-inorder-traversal/solution.py
 gcc 26-add-binary/solution.c -o /tmp/addBinary && /tmp/addBinary
 gcc 33-total-hamming-distance/solution.c -o /tmp/hamming && /tmp/hamming
 ```
-
-## 🔄 Syncing the last 6 LeetCode submissions
-
-LeetCode's submission code API requires a session cookie (`LEETCODE_SESSION`). Without it, code detail is login-walled (verified on 2026-10-08). To finish the 58:
-
-```bash
-# 1. Export cookie from browser after logging into leetcode.com
-export LEETCODE_SESSION="<value>"
-export LEETCODE_CSRFTOKEN="<value>"   # from cookie csrftoken
-python3 scripts/sync_leetcode.py --user vijay-3102 --out .
-```
-
-A starter script template is committed at `scripts/sync_leetcode.py` (see ANALYSIS.md).
 
 <sub>Mostly **Python**, with a few solutions in **C/C++**. Former loose files now structured. Auto-synced archive note: [MY-LEETCODE](https://github.com/Vijayaraj-IHT/MY-LEETCODE) (404 — may be private).</sub>
 
