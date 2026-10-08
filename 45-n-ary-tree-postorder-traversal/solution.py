@@ -1,5 +1,5 @@
 class Solution(object):
-    def preorder(self, root):
+    def postorder(self, root):
         if not root:
             return []
         
@@ -8,6 +8,6 @@ class Solution(object):
             node = stack.pop()
             res.append(node.val)
             if node.children:
-                stack.extend(node.children[::-1])
+                stack.extend(node.children)
                 
-        return res
+        return res[::-1]

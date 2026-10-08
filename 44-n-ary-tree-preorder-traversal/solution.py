@@ -1,5 +1,5 @@
 class Solution(object):
-    def postorderTraversal(self, root):
+    def preorder(self, root):
         if not root:
             return []
         
@@ -7,9 +7,7 @@ class Solution(object):
         while stack:
             node = stack.pop()
             res.append(node.val)
-            if node.left:
-                stack.append(node.left)
-            if node.right:
-                stack.append(node.right)
+            if node.children:
+                stack.extend(node.children[::-1])
                 
-        return res[::-1]
+        return res
